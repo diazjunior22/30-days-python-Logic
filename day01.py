@@ -9,13 +9,25 @@
 
 
 
-for i in range (1,101):
+# Recorremos los números del 1 al 100 (range(1, 101) incluye el 1 y excluye el 101)
+for i in range(1, 101):
     
-    if i % 3 == 0 and  i % 5 == 0:
-        print('Fizz buzz',  end=" ")
-    elif i % 3 == 0 :
-        print('fizz' ,  end=" ")
-    elif i % 5 ==  0:
-        print('buzz',  end=" ")
+    # Si 'i' es múltiplo de 3 y de 5 al mismo tiempo (es decir, de 15)
+    # se imprime primero esta rama para no “capturar” antes los casos de 3 o 5 por separado.
+    if i % 3 == 0 and i % 5 == 0:
+        # Imprime 'Fizz buzz' y NO hace salto de línea gracias a end=" "
+        # (así todos los resultados salen en una sola línea separados por espacios).
+        print('Fizz buzz', end=" ")
+        
+    # Si no cayó en la condición anterior y es múltiplo de 3:
+    elif i % 3 == 0:
+        print('fizz', end=" ")
+    
+    # Si no cayó en las anteriores y es múltiplo de 5:
+    elif i % 5 == 0:
+        print('buzz', end=" ")
+    
+    # En cualquier otro caso, imprime el número tal cual.
     else:
-        print(f'{i}' , end=" ")
+        # f'{i}' usa f-strings para convertir 'i' a texto.
+        print(f'{i}', end=" ")
